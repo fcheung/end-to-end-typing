@@ -1,0 +1,9 @@
+id: /responses/get_user.yml
+title: GetUserResponse
+type: object
+properties:
+  user:
+    $ref: ../types/user_detail.yml
+required:
+  - user
+additionalProperties: false

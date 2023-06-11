@@ -1,0 +1,10 @@
+id: /types/user_summary.yml
+title: UserSummary
+type: object
+properties:
+  id:
+    type: integer
+  name:
+    type: string
+additionalProperties: false
+required: [name, id]

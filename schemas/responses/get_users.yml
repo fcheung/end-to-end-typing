@@ -1,0 +1,15 @@
+id: /responses/get_users.yml
+title: GetUsersResponse
+type: object
+properties:
+  users:
+    type: array
+    description: An array of user summaries
+    items:
+      $ref: ../types/user_summary.yml
+  pagination:
+    $ref: ../types/pagination.yml
+required:
+  - users
+  - pagination
+additionalProperties: false
