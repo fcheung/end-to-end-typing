@@ -15,5 +15,8 @@
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
     "typescript-check": "tsc --pretty --noEmit"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
   }
 }
