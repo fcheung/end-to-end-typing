@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+const { compileFromFile } = require('json-schema-to-typescript')
+const fs = require('fs')
+const path = require('path')
+
+const entries = fs.readdirSync('schemas')
+
+for( const entry of entries) {
+  if(path.extname(entry) === '.json') {
+    const data = JSON.parse(fs.readFileSync(`schemas/${entry}`))
+    const basename = path.basename(entry, '.json')
+    compileFromFile(`schemas/${entry}`,{
+      cwd: 'schemas',
+      unreachableDefinitions: true,
+      enableConstEnums: true,
+      declareExternallyReferenced: true,
+      style: {singleQuote: true, semi: false},
+      additionalProperties: false
+    })
+      .then(ts => fs.writeFileSync(`app/javascript/generated_types/${basename}.ts`, ts))
+  }
+}
