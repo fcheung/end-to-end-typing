@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ol.pagination {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+ol.pagination li {
+  padding: 2px;
+}
