@@ -1,10 +1,19 @@
 import { useState } from 'react'
 import { GetUsersResponse } from '../generated_types/users'
 import PaginationLinks from './pagination'
+import getApi from '../utils/get_api'
 
 const Users = ({ pagination: initialPagination, users: initialUsers }: GetUsersResponse) => {
   const [pagination, setPagination] = useState(initialPagination)
   const [users, setUsers] = useState(initialUsers)
+
+  // this methods loads the requested page & re-renders
+  // the table/pagination using it
+  const loadPage = async (pageNumber: number) => {
+    const response = await getApi(`/users?page=${pageNumber}`)
+    setUsers(response.users)
+    setPagination(response.pagination)
+  }
 
   return (
     <>
@@ -26,7 +35,7 @@ const Users = ({ pagination: initialPagination, users: initialUsers }: GetUsersR
           ))}
         </tbody>
       </table>
-      <PaginationLinks onPageChanged={newPage => {}} {...pagination} />
+      <PaginationLinks onPageChanged={newPage => loadPage(newPage)} {...pagination} />
     </>
   )
 }
