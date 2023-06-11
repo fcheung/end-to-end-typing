@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import { GetUsersResponse } from '../generated_types/users'
 import PaginationLinks from './pagination'
 
-const Users = ({ pagination, users }: GetUsersResponse) => {
+const Users = ({ pagination: initialPagination, users: initialUsers }: GetUsersResponse) => {
+  const [pagination, setPagination] = useState(initialPagination)
+  const [users, setUsers] = useState(initialUsers)
+
   return (
     <>
       <table>
