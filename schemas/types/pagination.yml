@@ -1,0 +1,16 @@
+id: '/types/pagination.yml'
+title: Pagination
+description: The pagination information for a collection
+type: object
+properties:
+  total_entries:
+    description: The total number of entries in the collection
+    type: integer
+  current_page:
+    description: The requested page
+    type: integer
+  per_page:
+    description: The number of entries that we tried to load for this page
+    type: integer
+required: [total_entries, current_page, per_page]
+additionalProperties: false
