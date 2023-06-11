@@ -1,4 +1,5 @@
 import { GetUsersResponse } from '../generated_types/users'
+import PaginationLinks from './pagination'
 
 const Users = ({ pagination, users }: GetUsersResponse) => {
   return (
@@ -21,6 +22,7 @@ const Users = ({ pagination, users }: GetUsersResponse) => {
           ))}
         </tbody>
       </table>
+      <PaginationLinks onPageChanged={newPage => {}} {...pagination} />
     </>
   )
 }
