@@ -1,0 +1,8 @@
+{
+  "title": "Auto Generated",
+  "additionalProperties": false,
+  "definitions": {
+    "responses/get_user": { "$ref": "responses/get_user.yml" },
+    "responses/get_users": { "$ref": "responses/get_users.yml" }
+  }
+}
