@@ -13,6 +13,8 @@ really just want to display a paginated list of users.
 
 ## Setup
 
+To run this locally you need ruby 3.2, node and yarn installed. Alternatively you can run this inside a devcontainer or github codespaces. 
+
 Run
 
 ```
@@ -20,8 +22,7 @@ bin/setup
 rake db:seed
 ```
 
-to install dependencies and seed the db. You can run this locally if you have ruby 3.2, node and yarn installed or you
-can run this inside a devcontainer / github codespaces.
+to install dependencies and seed the db. 
 
 Then run `bin/dev` to run the rails server and the javascript file watcher. By default this will run on
 http://localhost:3000
