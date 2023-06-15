@@ -1,9 +1,10 @@
 # End to end typing demo app
 
-This small application shows some of the techniques discussed in the end to end typing talk.
+This small application shows some of the techniques discussed in my end to 
+end typing talk.
 
-It shows passing props to a component in a checked-by-schema way, generating types from those same schema files,and
-using them in react components.
+It shows passing props to a component in a checked-by-schema way, 
+generating types from those same schema files, and using them in react components.
 
 It also implements a simple api helper for fetching data from the rails app in a typesafe way
 
